@@ -17,7 +17,7 @@ module Fastlane
         command = <<-EOL
 curl #{options[:api_url]} \
   -F api_key=#{options[:api_token]} \
-  -F file=@#{options[:ipa]} \
+  -F \"file=@\\\"#{options[:ipa]}\\\"\" \
   -F title='#{options[:title]}' \
   -F description='#{options[:message]}' \
   -F tags='#{options[:tags]}'
